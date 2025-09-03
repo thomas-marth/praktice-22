@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDogs } from "../../redux/slices/dogsSlice";
+import { fetchDogs } from "../../redux/thunks";
 import styles from "./styles.module.css";
 
 function Dogs() {

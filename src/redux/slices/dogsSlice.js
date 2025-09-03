@@ -1,18 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { BASE_URL } from "../thunks";
-
-export const fetchDogs = createAsyncThunk("dogs/fetchDogs", async () => {
-  const { data } = await axios.get(`${BASE_URL}/breeds`);
-
-  const breeds = data
-    .map(({ name, temperament }) => ({
-      name,
-      temperament: temperament || "No data",
-    }))
-    .sort((a, b) => a.name.localeCompare(b.name));
-  return breeds;
-});
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchDogs } from "../thunks";
 
 const dogsSlice = createSlice({
   name: "dogs",
