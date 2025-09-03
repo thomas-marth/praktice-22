@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { BASE_URL } from "./../thanks";
+import { BASE_URL } from "../thunks";
 
 export const fetchDogs = createAsyncThunk("dogs/fetchDogs", async () => {
   const { data } = await axios.get(`${BASE_URL}/breeds`);
